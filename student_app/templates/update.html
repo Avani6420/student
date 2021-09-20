@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-3 mb-5">
+    <div class="row mt-5 mb-5">
+        <div class="col-lg-6 shadow  p-4">
+            <h3>Update Blog</h3>
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ stud.as_p }}
+            <!--<div class="form-group">
+                <h6>Name</h6>
+                {{ stud.Name }}
+            </div>
+            <div class="form-group">
+                <h6>Contact</h6>
+                {{ stud.contact }}
+            </div>
+            <div class="form-group">
+                <h6>Email</h6>
+                {{ stud.email }}
+            </div>
+            <div class="form-group">
+                <h6>City</h6>
+                {{ stud.city }}
+            </div>
+            <div class="form-group">
+                <h6>Image</h6>
+                <input class="form-control" type="text" name="image_name" value="{{stud.img.url}}">
+                <input class="form-control" type="file" name="image_document">
+            </div>-->
+                <button type="submit" class="btn btn-primary">update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<center><a href="/stud" class="btn btn-primary">Add New Record</a></center>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th class="bg-warning">Name</th>
+      <th class="bg-warning">Contact</th>
+      <th class="bg-warning">Email</th>
+      <th class="bg-warning">City</th>
+      <th class="bg-warning">Image</th>
+      <th class="bg-warning">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for sh in show %}
+    <tr>
+      <td class="table-light">{{sh.Name}}</td>
+      <td class="table-light">{{sh.contact}}</td>
+      <td class="table-light">{{sh.email}}</td>
+      <td class="table-light">{{sh.city}}</td>
+      <td class="table-light">{{sh.img}}</td>
+      <td class="table-light">
+        <a href="/update/{{sh.id}}" id="{{sh.id}}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+        <a href="/delete/{{sh.id}}">Delete</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
