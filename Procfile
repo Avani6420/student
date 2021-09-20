@@ -1,0 +1,1 @@
+web: gunicorn student_web.wsgi --log-file -
